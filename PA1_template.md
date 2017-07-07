@@ -40,9 +40,8 @@ library(ggplot2)
 # calculate steps per day
 stepsPerDay <- aggregate(steps ~ date, data = dt, sum)
 # draw the chart
-ggplot(stepsPerDay, aes(x = date, y = steps)) + 
-  geom_line() + geom_point() +
-  labs(title = "Steps Trend By Date")
+ggplot(stepsPerDay, aes(x = steps)) + 
+  geom_histogram(binwidth = 2000) + labs(title = "Daily Steps Total Count")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
@@ -117,9 +116,8 @@ newDT <- newDT[, list(date, interval, steps)]
 # calculate steps per day
 newStepsPerDay <- aggregate(steps ~ date, data = newDT, sum)
 # draw the chart
-ggplot(newStepsPerDay, aes(x = date, y = steps)) + 
-  geom_line() + geom_point() +
-  labs(title = "Steps Trend By Date")
+ggplot(newStepsPerDay, aes(x = steps)) + 
+  geom_histogram(binwidth = 2000) + labs(title = "Daily Steps Total Count")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
